@@ -1,42 +1,59 @@
-﻿// See https://aka.ms/new-console-template for more information
-/// <summary>
-///  Top-level statements 
-///  Код програми (оператори)  вищого рівня
-/// </summary>
-///
-Console.WriteLine("Lab4 C# ");
-AnyFunc();
+﻿using System;
+using System.Text;
 
-/// <summary>
-/// 
-///  Top-level statements must precede namespace and type declarations.
-/// At the top-level methods/functions can be defined and used
-/// На верхньому рівні можна визначати та використовувати методи/функції
-/// </summary>
-void AnyFunc()
+namespace Lab4CSharp
 {
-    Console.WriteLine(" Some function in top-level");
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // Налаштування кодування для коректного відображення української мови в терміналі macOS
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.InputEncoding = Encoding.UTF8;
+
+            bool running = true;
+
+            while (running)
+            {
+                Console.Clear();
+                Console.WriteLine(" 1. Завдання 1: Клас Triangle (Перевантаження та індексатори)");
+                Console.WriteLine(" 2. Завдання 2: Клас VectorUInt (Вектори цілих чисел)");
+                Console.WriteLine(" 3. Завдання 3: Співробітники (Структури, Кортежі, Записи)");
+                Console.WriteLine(" 4. Завдання 4: Клас MatrixUint (Матриці цілих чисел)");
+                Console.WriteLine(" 0. Вихід");
+                Console.WriteLine("==========================================================");
+                Console.Write("\n Оберіть номер завдання: ");
+
+                string? choice = Console.ReadLine();
+
+                Console.Clear();
+                switch (choice)
+                {
+                    case "1":
+                        Task1.Execute();
+                        break;
+                    case "2":
+                        Task2.Execute();
+                        break;
+                    case "3":
+                        Task3.Execute();
+                        break;
+                    case "4":
+                        Task4.Execute();
+                        break;
+                    case "0":
+                        running = false;
+                        Console.WriteLine("Програма завершена. Успіхів у навчанні!");
+                        continue;
+                    default:
+                        Console.WriteLine("Помилка: невірний вибір. Спробуйте ще раз.");
+                        break;
+                }
+
+                Console.WriteLine("\n----------------------------------------------------------");
+                Console.WriteLine("Натисніть Enter, щоб повернутися до головного меню...");
+                Console.ReadLine();
+            }
+        }
+    }
 }
-Console.WriteLine("Problems 1 ");
-AnyFunc();
-//  приклад класів
-UserClass cl = new UserClass();
-cl.Name = " UserClass top-level ";
-Lab4CSharp.UserClass cl2 = new Lab4CSharp.UserClass();
-cl2.Name = " UserClass namespace Lab4CSharp ";
-Console.WriteLine(cl + "   " + cl2 + "   ");
-
-
-
-/// <summary>
-/// 
-/// Top-level statements must precede namespace and type declarations.
-/// Оператори верхнього рівня мають передувати оголошенням простору імен і типу.
-/// Створення класу(ів) або оголошенням простору імен є закіченням  іструкцій верхнього рівня
-/// 
-/// </summary>
-
-class UserClass
-{
-    public string Name { get; set; }
-};
