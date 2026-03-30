@@ -26,7 +26,7 @@ namespace Lab4CSharp
             Console.WriteLine($"Кількість створених векторів: {VectorUInt.GetNumVec()}");
             
             Console.WriteLine("Перевірка індексатора V1[1]: " + v1[1]);
-            v1[10] = 5; // Помилка індексу
+            v1[10] = 5; 
             Console.WriteLine("CodeError після невірного індексу: " + v1.CodeError);
         }
     }
