@@ -4,7 +4,6 @@ using System.Linq;
 
 namespace Lab4CSharp
 {
-    // --- ВАРІАНТ 1: СТРУКТУРА (Struct) ---
     public struct EmployeeStruct
     {
         public string FullName;
@@ -24,7 +23,6 @@ namespace Lab4CSharp
         {
             Console.WriteLine("\n--- Завдання 3: Структури, Кортежі та Записи ---");
 
-            // 1. ПРИКЛАД ЗІ СТРУКТУРОЮ
             List<EmployeeStruct> structList = new List<EmployeeStruct>
             {
                 new EmployeeStruct { FullName = "Іваненко І.І.", Position = "Менеджер", BirthYear = 1990, Salary = 25000 },
@@ -38,13 +36,11 @@ namespace Lab4CSharp
                 ("Бацура Б.О.", "Інженер", 2004, 50000)
             };
 
-            // 3. ПРИКЛАД ІЗ ЗАПИСАМИ (Records)
             List<EmployeeRecord> recordList = new List<EmployeeRecord>
             {
                 new EmployeeRecord("Коваленко К.К.", "Аналітик", 1988, 35000)
             };
 
-            // ДЕМОНСТРАЦІЯ ДІЙ (на прикладі структур)
             Console.WriteLine("\nПочатковий список (структури):");
             PrintList(structList);
 
@@ -54,8 +50,7 @@ namespace Lab4CSharp
             Console.WriteLine($"\nПісля видалення '{nameToDelete}':");
             PrintList(structList);
 
-            // Додавання після вказаного номера (індексу)
-            int indexAfter = 0; // Додати після 0-го елемента
+            int indexAfter = 0; 
             var newEmp = new EmployeeStruct { FullName = "Новий Співробітник", Position = "Стажер", BirthYear = 2005, Salary = 15000 };
             
             if (indexAfter >= 0 && indexAfter < structList.Count)
