@@ -7,7 +7,6 @@ namespace Lab4CSharp
     {
         static void Main(string[] args)
         {
-            // Налаштування кодування для коректного відображення української мови в терміналі macOS
             Console.OutputEncoding = Encoding.UTF8;
             Console.InputEncoding = Encoding.UTF8;
 
