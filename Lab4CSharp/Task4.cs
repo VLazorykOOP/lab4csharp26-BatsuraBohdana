@@ -29,7 +29,7 @@ namespace Lab4CSharp
             
             Console.WriteLine($"\nЗвернення до M1 через індекс k=2 (i=1, j=0): {m1[2]}");
             
-            m1[5, 5] = 100; // Помилка
+            m1[5, 5] = 100; 
             Console.WriteLine($"CodeError після виходу за межі: {m1.CodeError}");
         }
     }
